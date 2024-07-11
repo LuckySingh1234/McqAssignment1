@@ -12,6 +12,9 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import org.apache.poi.xssf.usermodel.*;
 
 public class McqAssignment {
@@ -59,7 +62,7 @@ public class McqAssignment {
                 if (node.getNodeType() == Node.ELEMENT_NODE) {
                     Element element = (Element) node;
                     String id = element.getAttribute("id");
-                    String value = element.getTextContent().split("\\|")[1];
+                    String value = element.getTextContent().split("\\_")[1];
                     String correctOptionNumber = getCorrectOptionNumber(optionMap, id, value);
                     answerMap.put(id, correctOptionNumber);
                 }
@@ -90,21 +93,26 @@ public class McqAssignment {
     }
 
     public static void main(String[] args) {
-        String filePath = "/Users/paramjotsingh/Desktop/JavaQuestions.xml";  // Path to your XML file
+        String filePath = "F:/McqAssignment1/data/JavaQuestions_1.xml";
         Map<String, Question> questionMap = readQuestionsFromXML(filePath);
 
-        // Step 2: Console Input for Name, Mobile Number, and Random Number Generation
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter your name: ");
         String name = scanner.nextLine();
         System.out.print("Enter your mobile number: ");
         String mobileNumber = scanner.nextLine();
-
+        String regex = "^[0-9]{10}$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(mobileNumber);
+        while (!matcher.matches()) {
+            System.out.println("Please enter a valid mobile number");
+            mobileNumber = scanner.nextLine();
+            matcher = pattern.matcher(mobileNumber);
+        }
         Random random = new Random();
         int randomId = 100000 + random.nextInt(900000);
         System.out.println("Your assessment ID is: " + randomId);
 
-        // Step 3: Prompt to Start Assessment
         System.out.print("To start the assessment enter 'yes': ");
         String startAssessment = scanner.nextLine();
         if (!startAssessment.equalsIgnoreCase("yes")) {
@@ -112,7 +120,6 @@ public class McqAssignment {
             return;
         }
 
-        // Step 4: Display Questions and Get User Input
         Map<String, String> userAnswers = new HashMap<>();
         for (Question question : questionMap.values()) {
             System.out.println(question.value);
@@ -125,7 +132,6 @@ public class McqAssignment {
             userAnswers.put(question.id, userAnswer);
         }
 
-        // Step 5: Calculate Marks
         int marks = 0;
         int wrongAnswers = 0;
         for (Question question : questionMap.values()) {
@@ -136,7 +142,6 @@ public class McqAssignment {
             }
         }
 
-        // Step 6: Apply Negative Marking
         int negativeMarks = 0;
         if (wrongAnswers >= 3 && wrongAnswers <= 5) {
             negativeMarks = -1;
@@ -151,12 +156,11 @@ public class McqAssignment {
         System.out.println("Negative Marks: " + negativeMarks);
         System.out.println("Total Marks: " + totalMarks);
 
-        // Step 7: Write Data to Excel Sheet
         writeDataToExcel(randomId, name, mobileNumber, marks, negativeMarks, totalMarks);
     }
 
     public static void writeDataToExcel(int randomId, String name, String mobileNumber, int marks, int negativeMarks, int totalMarks) {
-        String excelFilePath = "/Users/paramjotsingh/Desktop/MCQResult.xlsx";
+        String excelFilePath = "F:/McqAssignment1/data/MCQResult.xlsx";
         try {
             File file = new File(excelFilePath);
             XSSFWorkbook workbook;
@@ -192,7 +196,7 @@ public class McqAssignment {
                 existingRow.setTotalMarks((int) row.getCell(5).getNumericCellValue());
                 if (rowToBeAdded.compareTo(existingRow) > 0) {
                     sheet.shiftRows(i, sheet.getLastRowNum(), 1);
-                    Row newRow = sheet.getRow(i);
+                    Row newRow = sheet.createRow(i);
                     newRow.createCell(0).setCellValue(randomId);
                     newRow.createCell(1).setCellValue(name);
                     newRow.createCell(2).setCellValue(mobileNumber);

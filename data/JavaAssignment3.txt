@@ -1,0 +1,19 @@
+MCQ Assignment 
+
+Step1) Read the Xml file and store the data accordingly
+
+Step2) In console ask Name, MobileNumber and generate 6 digit random number
+
+Step3) Then in console you need to ask "To Start the Assessment enter yes"
+
+Step 4) After giving Yes show the question and 4 options , user should give the option, questions one by one should show (based on a,b,c,d you should consider the answer)
+
+Step 5) After storing all the answer value calculate the marks for each questions 2 marks 
+
+Step 6) If user gave 3 to 5 wrong answer reduce "1" mark (-negative mark) if user gave 6 to 8 wrong answer reduce "2" marks if user gave 9 to 10 wrong answer reduce "3" marks 
+
+
+Step 7) All the datas should populated on excel sheet , RandomId , Name , MobileNumber , Marks , negative marks , total marks
+
+Step 8) Every time whenever you are updating the new user data based on marks you need to sort the order highest mark should show on the top on excel ,it will be descending order
+

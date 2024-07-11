@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MultipleChoiceQuestion>
+   <Questions>
+		<Question id="100">
+			<Value>Which of the following is not a valid keyword in Java?</Value>
+		</Question>
+		<Question id="101">
+			<Value>Which of the following is the correct way to declare a constant in Java?</Value>
+		</Question>
+		<Question id="102">
+			<Value>Which of the following is used to find and fix bugs in the Java programs?</Value>
+		</Question>
+		<Question id="103">
+			<Value>Which of the following is not a primitive data type in Java?</Value>
+		</Question>
+		<Question id="104">
+			<Value>Which method can be defined only once in a program?</Value>
+		</Question>
+		<Question id="105">
+			<Value>Which of these keywords is used to define interfaces in Java?</Value>
+		</Question>
+		<Question id="106">
+			<Value>Which of the following is not an OOP concept in Java?</Value>
+		</Question>
+		<Question id="107">
+			<Value>Which of these access specifiers can be used for a class so that it can be accessed by any code?</Value>
+		</Question>
+		<Question id="108">
+			<Value>Which of the following is used to handle exceptions in Java?</Value>
+		</Question>
+		<Question id="109">
+			<Value>What is the return type of the hashCode() method in the Object class?</Value>
+		</Question>
+   </Questions>
+      <Options>
+		<Option id="100">
+			<ValueOne>a) class</ValueOne>
+			<ValueTwo>b) interface</ValueTwo>
+			<ValueThree>c) extends</ValueThree>
+			<ValueFour>d) implements</ValueFour>
+		</Option>
+		<Option id="101">
+			<ValueOne>a) const int MAX = 100;</ValueOne>
+			<ValueTwo>b) final int MAX = 100;</ValueTwo>
+			<ValueThree>c) static int MAX = 100;</ValueThree>
+			<ValueFour>d) abstract int MAX = 100;</ValueFour>
+		</Option>
+		<Option id="102">
+			<ValueOne>a) JVM</ValueOne>
+			<ValueTwo>b) JRE</ValueTwo>
+			<ValueThree>c) JDK</ValueThree>
+			<ValueFour>d) JDB</ValueFour>
+		</Option>
+		<Option id="103">
+			<ValueOne>a) int</ValueOne>
+			<ValueTwo>b) float</ValueTwo>
+			<ValueThree>c) boolean</ValueThree>
+			<ValueFour>d) String</ValueFour>
+		</Option>
+		<Option id="104">
+			<ValueOne>a) main method</ValueOne>
+			<ValueTwo>b) finalize method</ValueTwo>
+			<ValueThree>c) static method</ValueThree>
+			<ValueFour>d) private method</ValueFour>
+		</Option>
+		<Option id="105">
+			<ValueOne>a) interface</ValueOne>
+			<ValueTwo>b) Intf</ValueTwo>
+			<ValueThree>c) interf</ValueThree>
+			<ValueFour>d) implements</ValueFour>
+		</Option>
+		<Option id="106">
+			<ValueOne>a) Polymorphism</ValueOne>
+			<ValueTwo>b) Inheritance</ValueTwo>
+			<ValueThree>c) Compilation</ValueThree>
+			<ValueFour>d) Encapsulation</ValueFour>
+		</Option>
+		<Option id="107">
+			<ValueOne>a) public</ValueOne>
+			<ValueTwo>b) protected</ValueTwo>
+			<ValueThree>c) private</ValueThree>
+			<ValueFour>d) default</ValueFour>
+		</Option>
+		<Option id="108">
+			<ValueOne>a) catch</ValueOne>
+			<ValueTwo>b) throw</ValueTwo>
+			<ValueThree>c) try</ValueThree>
+			<ValueFour>d) All of the above</ValueFour>
+		</Option>
+		<Option id="109">
+			<ValueOne>a) Object</ValueOne>
+			<ValueTwo>b) int</ValueTwo>
+			<ValueThree>c) long</ValueThree>
+			<ValueFour>d) void</ValueFour>
+		</Option>
+   </Options>
+		<Answers>
+		<Answer id="100">Answer|implements|Answer</Answer>
+		<Answer id="101">Answer|final int MAX = 100;|Answer</Answer>
+		<Answer id="102">Answer|JDB|Answer</Answer>
+		<Answer id="103">Answer|String|Answer</Answer>
+		<Answer id="104">Answer|main method|Answer</Answer>
+		<Answer id="105">Answer|interface|Answer</Answer>
+		<Answer id="106">Answer|Compilation|Answer</Answer>
+		<Answer id="107">Answer|public|Answer</Answer>
+		<Answer id="108">Answer|All of the above|Answer</Answer>
+		<Answer id="109">Answer|int|Answer</Answer>
+	</Answers>
+</MultipleChoiceQuestion>
+
+
+
+
+
+
